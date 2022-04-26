@@ -1,120 +1,30 @@
-#Menu de opciones
 def menu():
-    while (opc <= 8 and opc >= 0):
-        print("MENU PRINCIPAL")
-        print("1- ADMINISTRACIONES")
-        print("2- ENTREGAS DE CUPOS")
-        print("3- RECEPCION")
-        print("4- REGISTRAR CALIDAD")
-        print("5- REGISTRAR PESO BRUTO")
-        print("6- REGISTRAR DESCARGA")
-        print("7- REGISTRAR TARA")
-        print("8- REPORTES")
-        print("0- FIN DEL PROGRAMA")
-        print()
+    print("1-Administración")
+    print("2-Entrega de cupos")
+    print("3-Recepción")
+    print("4-Registrar calidad")
+    print("5-Registrar peso bruto")
+    print("6-Registrar descargas")
+    print("7-Registrar tara")
+    print("8-reportes")
+    print("0-Fin del programa")
 
-        opc = int(input("Seleccione una opción: "))
-       
-        while (opc < 0 or opc > 8):	
-        	print("")
-        	print("Opcion incorrecta")
-        	opc = int(input("Seleccione una opción: "))
-
-        if (opc == 1):
-            administracion()
-        
-        elif (opc == 2):
-            entregadecupos()
-        
-        elif (opc == 3):
-            recepcion()
-        
-        elif (opc == 4):
-            registrarcalidad()
-        
-        elif (opc == 5):
-            registrarpesobruto()
-
-        elif (opc == 6):
-            registrardescarga()
-
-        elif (opc == 7):
-            registrartara()
-
-        elif (opc == 8):
-            reportes()
-        
-        else:
-            exit() #break
-
-def administracion():
-    print ("ADMINISTRACION")
-
-def menuadmin():
-	while (opc != 'A' and opc != 'B' and opc != 'C' and opc != 'D' and opc != 'E' and opc != 'F' and opc != 'V'):
-        #print("MENU ADMINISTRACIONES")
-        print("A- TITULARES")
-        print("B- PRODUCTOS")
-        print("C- RUBROS")
-        print("D- RUBROS x PRODUCTO")
-        print("E- SILOS")
-        print("F- SUCURSALES")
-        print("G- PRODUCTO POR TITULAR")
-        print("V- VOLVER Al MENU PRINCIPAL")
-        print()
-
-        opc = int(input("Seleccione una opción: "))
-   
-
-        if (opc == 'A'):  
-        
-        elif (opc == 'B'):
-            
-        elif (opc == 'C'):
-            
-        elif (opc == 'D'):
-
-        elif (opc == 'E'):
-
-        elif (opc == 'F'):
-    
-
-        else (opc == 'V'):
-            menu()
-
-     	"""
-		A- TITULARES
-		B- PRODUCTOS
-		C- RUBROS
-		D- RUBROS x PRODUCTO
-		E- SILOS
-		F- SUCURSALES
-		G- PRODUCTO POR TITULAR
-		V- VOLVER al MENU PRINCIPAL
-
-     	"""
-def menuadmin2():
-
-
-def entregadecupos():
-    print ("En proceso")
+menu()
+opc = int(input("Bienvenidos a el menu pricnipal. Ingrese una opción o 0 para terminar"))
+while opc != 0:
+    while opc != 1 and opc != 2 and opc != 3 and opc != 4 and opc != 5 and opc != 6 and opc != 7 and opc != 8 and opc != 0:
+        opc = int(input("Opción incorrecta elija una opción entre 1 y 8 o 0 para terminar"))
 
 def recepcion():
-    print ("En proceso")
-
-def registrarcalidad():
-    print ("En proceso")
-
-def registrarpesobruto():
-    print ("En proceso")
-
-def registrardescarga():
-    print ("En proceso")
-
-def registrartara():
-    print ("En proceso")
-
-def reportes():
-    print ("En proceso")
-    
-menu()
+    elec = str(input("Desea ingresar un camion? S o N"))
+    elec.upper()
+    while elec != "S" and elec != "N":
+        elec = str(input("Opción incorrecta elija S o N"))
+    while elec != "N":
+        cantcam = cantcam + 1 
+        patent = str(input("Ingrese la patente del camion"))
+        prod = str(input("Ingrese el producto transportado: S (Soja) o M (Maíz)"))
+        prod.upper()
+        while prod != "S" and prod != "M":
+            prod = str(input("Prodcuto invalido ingrese S o M"))
+        if prod == "S":
